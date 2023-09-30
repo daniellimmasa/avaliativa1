@@ -1,24 +1,24 @@
-#include<stdio.h>
-int main(){
-int a,b,c;
-printf("digite o valor a: ");scanf("%d", &a);
-printf("digite o valor b: ");scanf("%d", &b);
-printf("digite o valor b: ");scanf("%d", &c);
+#include <stdio.h>
 
-if(a+b>c && a+c>b && b+c >a){
-
-if(a==b&& b==c ){
-    printf("seu triangulo e equilatero");
-}else if (a == b || a==c || c==b){
-    printf("seu triangulo e isosceles");
-
-}else if(a != b && a!=c && c!=b){
-    printf("seu triangulo e escaleno");
-
-}else{
-    printf("os numeros informados nao formam triangulio");
-}
-}
-
-
+int main() {
+    int A, B, C;
+    
+    
+    printf("Digite os valores dos lados A, B e C do triângulo: ");
+    scanf("%d %d %d", &A, &B, &C);
+    
+    if ((A + B > C) && (A + C > B) && (B + C > A)) {
+        
+        if (A*A + B*B == C*C || A*A + C*C == B*B || B*B + C*C == A*A) {
+            printf("Triângulo Retângulo\n");
+        } else if (A*A + B*B < C*C || A*A + C*C < B*B || B*B + C*C < A*A) {
+            printf("Triângulo Obtusângulo\n");
+        } else {
+            printf("Triângulo Acutângulo\n");
+        }
+    } else {
+        printf("Estes valores não formam um triângulo.\n");
+    }
+    
+    return 0;
 }
